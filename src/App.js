@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+function Food(props) {
+  return <h1>I like {props.fav} food</h1>
+}
+
+
+function Food2({fav}) {
+  return <h1>I like {fav} food</h1>
+     }
+
+const foodILike = [
+  {
+    name: 'Kimchi',
+    image: 'https://love.seoul.go.kr/pds/Board/seoul_news_write/201812_18_1.jpg'
+  }
+
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {foodILike.map(dish => (<Food name={dish.name}/>))}
+      
+
     </div>
   );
 }
